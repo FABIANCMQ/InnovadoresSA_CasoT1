@@ -36,11 +36,17 @@ public class InnovadoresSA_TPOO_T1 {
         System.out.println("Ingrese su Fondo de pensión: ");
         String fondoPension = sc.nextLine();
         
+        System.out.println("Ingrese su Sueldo: ");
+        double sueldoBase = sc.nextDouble();
+        sc.nextLine();
+        
+        
         trab.setNombre(nombre);
         trab.setTipo_doc(tipoDocumento);
         trab.setNro_documento(nroDocumento, tipoDocumento);
-        trab.setRégimen(regimenLaboral);
+        trab.setRegimen(regimenLaboral);
         trab.setFondo_pensiones(fondoPension);
+        trab.setSueldo(sueldoBase);
         
         trab.verDatos();
     }

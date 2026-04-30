@@ -14,7 +14,7 @@ public class Trabajadores {
     private String nro_documento;
     private String regimen;
     private String fondo_pensiones;
-    private float sueldo;
+    private double sueldo;
     private boolean turno_noche;
     private boolean hijos;
 
@@ -38,7 +38,7 @@ public class Trabajadores {
         return nro_documento;
     }
 
-    public void setNro_documento(String nro_documento, String tipo_doc) {
+    public void setNro_documento(String nro_documento, String tipo_documento) {
         if (tipo_doc.equalsIgnoreCase("DNI")) {
             if (nro_documento.length()==8) {
                 this.nro_documento = nro_documento;
@@ -56,12 +56,12 @@ public class Trabajadores {
         }
     }
 
-    public String getRégimen() {
+    public String getRegimen() {
         return regimen;
     }
 
-    public void setRégimen(String régimen) {
-        this.regimen = régimen;
+    public void setRegimen(String regimen) {
+        this.regimen = regimen;
     }
 
     public String getFondo_pensiones() {
@@ -72,11 +72,11 @@ public class Trabajadores {
         this.fondo_pensiones = fondo_pensiones;
     }
 
-    public float getSueldo() {
+    public double getSueldo() {
         return sueldo;
     }
 
-    public void setSueldo(float sueldo) {
+    public void setSueldo(double sueldo) {
         this.sueldo = sueldo;
     }
 
@@ -99,16 +99,17 @@ public class Trabajadores {
     public Trabajadores() {
     }
 
-    public Trabajadores(String nombre, String tipo_doc, String nro_documento, String régimen, String fondo_pensiones, float sueldo, boolean turno_noche, boolean hijos) {
+    public Trabajadores(String nombre, String tipo_doc, String nro_documento, String regimen, String fondo_pensiones, double sueldo, boolean turno_noche, boolean hijos) {
         this.nombre = nombre;
         this.tipo_doc = tipo_doc;
         this.nro_documento = nro_documento;
-        this.regimen = régimen;
+        this.regimen = regimen;
         this.fondo_pensiones = fondo_pensiones;
         this.sueldo = sueldo;
         this.turno_noche = turno_noche;
         this.hijos = hijos;
     }
+    
     public double calcularPension(){
         double tasa;
         switch (fondo_pensiones){
