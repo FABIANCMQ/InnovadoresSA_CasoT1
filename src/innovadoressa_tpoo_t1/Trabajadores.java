@@ -44,14 +44,12 @@ public class Trabajadores {
                 this.nro_documento = nro_documento;
             }else{
                 System.out.println("Error. El DNI solo puede tener 8 digitos");
-                this.nro_documento = "No Valido";
             }
         }else if (tipo_doc.equalsIgnoreCase("Residencia Temporal")) {
             if (nro_documento.length()==11) {
                 this.nro_documento = nro_documento;
             }else{
                 System.out.println("Error. El DNI solo puede tener 11 digitos");
-                this.nro_documento = "No Valido";
             }
         }
     }
@@ -114,7 +112,7 @@ public class Trabajadores {
         double tasa;
         switch (fondo_pensiones){
             case "AFP Integra":
-                tasa=12.1;
+                tasa = 12.1;
                 break;
             case "AFP Prima":
                 tasa = 12.5;
@@ -134,26 +132,27 @@ public class Trabajadores {
     public double calcularSueldo(){
         double sueldoCalculado = sueldo;
         if (regimen.equalsIgnoreCase("Regimen 728")) {
-            double Prestaciones = 200.0;
-            sueldoCalculado+=Prestaciones;
+            sueldoCalculado += 200.0;
             if(hijos){
-                double bonoFamiliar = 100.0;
-                sueldoCalculado += bonoFamiliar;
+                sueldoCalculado += 150.0;
             }
         }
         
         if(turno_noche){
-            double bonoTurnoNoche = 50.0;
-            sueldoCalculado += bonoTurnoNoche;
+            sueldoCalculado+=50.0;
         }
         return sueldoCalculado;
     }
     
     
     public void verDatos(){
+        double pension = calcularPension();
+        double sueldobruto = calcularSueldo();
+        double sueldoneto = sueldobruto - pension;
         System.out.println("Trabajadores");
-        System.out.println("Nombre: "+this.nombre+ "Tipo Documento: "+this.tipo_doc+
-                "Numero Documento: "+this.nro_documento+"Régimen Laboral: "+this.regimen+
-                "Fondo de Pensiones: "+this.fondo_pensiones+"Sueldo: "+this.sueldo);
+        System.out.println("Nombre: "+this.nombre+ "\nTipo Documento: "+this.tipo_doc+
+                "\nNumero Documento: "+this.nro_documento+"\nRégimen Laboral: "+this.regimen+
+                "\nFondo de Pensiones: "+this.fondo_pensiones+"\nSueldo Base: "+this.sueldo+
+                "\nSueldo Bruto: "+sueldobruto+"\nSueldo Neto: "+ sueldoneto + "\nPension: "+ pension);
     }
 }

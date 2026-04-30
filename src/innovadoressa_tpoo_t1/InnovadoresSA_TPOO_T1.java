@@ -4,7 +4,6 @@
  */
 package innovadoressa_tpoo_t1;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -19,14 +18,16 @@ public class InnovadoresSA_TPOO_T1 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc = new Scanner(System.in);
-        Trabajadores trab = new Trabajadores();
+        
         
         System.out.println("Registro Trabajador");
         System.out.println("Desea registrar un trabajador? (S/N):");
         String rpta = sc.nextLine();
         
         while(rpta.equalsIgnoreCase("S")){
-            System.out.println("Ingrese su nombre: ");
+        Trabajadores trab = new Trabajadores();
+        
+        System.out.println("Ingrese su nombre: ");
         String nombre = sc.nextLine();
         
         System.out.println("Ingrese su Tipo de Documento (DNI/Residencia Temporal): ");
@@ -41,13 +42,16 @@ public class InnovadoresSA_TPOO_T1 {
         System.out.println("Ingrese su Fondo de pensión: ");
         String fondoPension = sc.nextLine();
         
-        System.out.println("Ingrese su Sueldo: ");
+        System.out.println("Ingrese su Sueldo Base: ");
+        
         double sueldoBase = sc.nextDouble();
         sc.nextLine();
         
+        System.out.println("Trabaja en turno noche? (S/N): ");
+        trab.setTurno_noche(sc.nextLine().equalsIgnoreCase("S"));
+        
         System.out.println("Tiene hijos? (Si/no)");
-        
-        
+        trab.setHijos(sc.nextLine().equalsIgnoreCase("S"));
         
         trab.setNombre(nombre);
         trab.setTipo_doc(tipoDocumento);
@@ -62,6 +66,7 @@ public class InnovadoresSA_TPOO_T1 {
             rpta = sc.nextLine();
         }
         
+        System.out.println("Registro Finalizado");
     }
     
 }
