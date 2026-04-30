@@ -131,7 +131,23 @@ public class Trabajadores {
         }
         return sueldo*(tasa/100);
     }
-    
+    public double calcularSueldo(){
+        double sueldoCalculado = sueldo;
+        if (regimen.equalsIgnoreCase("Regimen 728")) {
+            double Prestaciones = 200.0;
+            sueldoCalculado+=Prestaciones;
+            if(hijos){
+                double bonoFamiliar = 100.0;
+                sueldoCalculado += bonoFamiliar;
+            }
+        }
+        
+        if(turno_noche){
+            double bonoTurnoNoche = 50.0;
+            sueldoCalculado += bonoTurnoNoche;
+        }
+        return sueldoCalculado;
+    }
     
     
     public void verDatos(){

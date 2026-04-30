@@ -4,6 +4,7 @@
  */
 package innovadoressa_tpoo_t1;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -21,7 +22,11 @@ public class InnovadoresSA_TPOO_T1 {
         Trabajadores trab = new Trabajadores();
         
         System.out.println("Registro Trabajador");
-        System.out.println("Ingrese su nombre: ");
+        System.out.println("Desea registrar un trabajador? (S/N):");
+        String rpta = sc.nextLine();
+        
+        while(rpta.equalsIgnoreCase("S")){
+            System.out.println("Ingrese su nombre: ");
         String nombre = sc.nextLine();
         
         System.out.println("Ingrese su Tipo de Documento (DNI/Residencia Temporal): ");
@@ -40,6 +45,9 @@ public class InnovadoresSA_TPOO_T1 {
         double sueldoBase = sc.nextDouble();
         sc.nextLine();
         
+        System.out.println("Tiene hijos? (Si/no)");
+        
+        
         
         trab.setNombre(nombre);
         trab.setTipo_doc(tipoDocumento);
@@ -49,6 +57,11 @@ public class InnovadoresSA_TPOO_T1 {
         trab.setSueldo(sueldoBase);
         
         trab.verDatos();
+        
+            System.out.println("Desea registrar otro trabajador? (S/N): ");
+            rpta = sc.nextLine();
+        }
+        
     }
     
 }
