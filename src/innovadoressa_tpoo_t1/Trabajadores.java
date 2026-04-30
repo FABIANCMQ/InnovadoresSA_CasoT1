@@ -130,6 +130,9 @@ public class Trabajadores {
         }
         return sueldo*(tasa/100);
     }
+    
+    
+    
     public void verDatos(){
         System.out.println("Trabajadores");
         System.out.println("Nombre: "+this.nombre+ "Tipo Documento: "+this.tipo_doc+
