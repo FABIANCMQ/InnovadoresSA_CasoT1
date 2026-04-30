@@ -109,4 +109,26 @@ public class Trabajadores {
         this.turno_noche = turno_noche;
         this.hijos = hijos;
     }
+    
+    public double calcularPension(){
+        double tasa;
+        switch (fondo_pensiones){
+            case "AFP Integra":
+                tasa=12.1;
+                break;
+            case "AFP Prima":
+                tasa = 12.5;
+                break;
+            case "AFP Habitat":
+                tasa = 12.7;
+                break;
+            case "ONP":
+                tasa = 13;
+                break;
+            default:
+                System.out.println("Error. Fondo de Prensiones no válido");
+                return 0;
+        }
+        return sueldo*(tasa/100);
+    }
 }
