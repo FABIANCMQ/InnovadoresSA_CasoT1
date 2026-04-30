@@ -12,7 +12,7 @@ public class Trabajadores {
     private String nombre;
     private String tipo_doc;
     private String nro_documento;
-    private String régimen;
+    private String regimen;
     private String fondo_pensiones;
     private float sueldo;
     private boolean turno_noche;
@@ -57,11 +57,11 @@ public class Trabajadores {
     }
 
     public String getRégimen() {
-        return régimen;
+        return regimen;
     }
 
     public void setRégimen(String régimen) {
-        this.régimen = régimen;
+        this.regimen = régimen;
     }
 
     public String getFondo_pensiones() {
@@ -103,10 +103,17 @@ public class Trabajadores {
         this.nombre = nombre;
         this.tipo_doc = tipo_doc;
         this.nro_documento = nro_documento;
-        this.régimen = régimen;
+        this.regimen = régimen;
         this.fondo_pensiones = fondo_pensiones;
         this.sueldo = sueldo;
         this.turno_noche = turno_noche;
         this.hijos = hijos;
+    }
+    
+    public void verDatos(){
+        System.out.println("Trabajadores");
+        System.out.println("Nombre: "+this.nombre+ "Tipo Documento: "+this.tipo_doc+
+                "Numero Documento: "+this.nro_documento+"Régimen Laboral: "+this.regimen+
+                "Fondo de Pensiones: "+this.fondo_pensiones);
     }
 }
